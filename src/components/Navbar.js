@@ -30,7 +30,7 @@ const Navbar = () => {
                         </div>
 
 
-                        <div className="hidden md:flex items-center space-x-1  ">
+                        <div className=" md:flex items-center space-x-1  ">
                             <Link to='/services' className="py-5 px-3 text-gray-700 hover:text-gray-900 font-bold">Services</Link>
                             <Link to='/blogs' className="py-5 px-3 text-gray-700 hover:text-gray-900 font-bold">Blogs</Link>
 
@@ -60,6 +60,7 @@ const Navbar = () => {
                                 <li href="" className="py-5 block px-3 list-none"> <Link to={'/login'}>Login</Link></li>
 
                                 <li href="" className="py-2 block list-none px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300"><Link to={'/register'}>Register</Link></li>
+                               
                             </ul>
                         )}
 
