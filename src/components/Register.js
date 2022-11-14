@@ -30,7 +30,17 @@ const Register = () => {
         updateName(name)
           .then(() => {
             toast.success('Name Updated')
-
+            fetch('https://dr-aminul-backend.vercel.app/login', {
+              method: 'POST',
+              body: JSON.stringify({email, password}),
+            })
+              .then((response) => response.json())
+              .then((json) =>{
+                if (json.token) {
+                  localStorage.setItem('token' , json.token)
+                }
+                console.log();
+              });
 
             //3. Email verification
             // verifyEmail()

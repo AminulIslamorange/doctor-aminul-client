@@ -15,12 +15,12 @@ const Myreviews = () => {
   
 let email = user?.email
   useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/${email}`).then(res => res.json()).then(data => setReviews(data?.data))
+        fetch(`https://dr-aminul-backend.vercel.app/myreviews/${email}`).then(res => res.json()).then(data => setReviews(data?.data))
     }, [email , refresh])
-console.log(reviews);
+// console.log(reviews,email,token);
 
  const handleDelete =(id) =>{
-    fetch(`http://localhost:5000/deletereview/${id}` , {method : 'DELETE'}).then(res => res.json()).then(data => {
+    fetch(`https://dr-aminul-backend.vercel.app/deletereview/${id}` , {method : 'DELETE'}).then(res => res.json()).then(data => {
         if (data) {
             toast.success("Deleted Succesfull")  
             setRefresh(true)

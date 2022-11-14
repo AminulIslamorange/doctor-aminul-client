@@ -4,10 +4,12 @@ import ServiceCard from '../Child/ServiceCard';
 
 
 const HomeServices = () => {
-    const [datas, setDatas] = useState([])
+    const [datas, setDatas] = useState()
     console.log(datas);
     useEffect(() => {
-        fetch('http://localhost:5000/services/home').then(res => res.json()).then(data => setDatas(data?.data))
+        fetch('https://dr-aminul-backend.vercel.app/services/home')
+        .then(res => res.json())
+        .then(data => setDatas(data?.data))
     }, [])
     return (
         <div className="  ">

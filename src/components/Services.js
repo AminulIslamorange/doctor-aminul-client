@@ -9,7 +9,7 @@ const Services = () => {
     const [datas, setDatas] = useState([])
     console.log(datas);
     useEffect(() => {
-        fetch('http://localhost:5000/services').then(res => res.json()).then(data => setDatas(data?.data))
+        fetch('https://dr-aminul-backend.vercel.app/services').then(res => res.json()).then(data => setDatas(data?.data))
     }, [])
 
     return (

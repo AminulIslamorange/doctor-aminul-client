@@ -13,7 +13,7 @@ const AddReviewForm = ({setRefresh}) => {
     let photo = user.photoURL != null ? user.photoURL : 'https://static.thenounproject.com/png/2709857-200.png'
     const handleSubmit = event => {
         event.preventDefault()
-        fetch('http://localhost:5000/addreview', {
+        fetch('https://dr-aminul-backend.vercel.app/addreview', {
             method: 'POST',
             body: JSON.stringify({ title, review, email, productid: id, photo, rating, name }),
             headers: {

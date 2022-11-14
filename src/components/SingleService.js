@@ -14,9 +14,9 @@ const SingleService = () => {
     const [refresh, setRefresh] = useState(false);
     let img = data?.mainimage
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${id}`).then(res => res.json()).then(data => setData(data?.data))
+        fetch(`https://dr-aminul-backend.vercel.app/service/${id}`).then(res => res.json()).then(data => setData(data?.data))
         img = data?.mainimage
-        fetch(`http://localhost:5000/reviews/${id}`).then(res => res.json()).then(data => setReviews(data?.data))
+        fetch(`https://dr-aminul-backend.vercel.app/reviews/${id}`).then(res => res.json()).then(data => setReviews(data?.data))
         img = data?.mainimage
     }, [refresh])
 
@@ -63,18 +63,18 @@ const SingleService = () => {
                         </div>
                         {/* short des */}
                         <p className='px-2 py-2 bg-green-100 text-lg rounded-lg text-yellow-900 max-w-max'> <span className='font-bold'>Service Id:</span>  {id}</p>
-                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque delectus ipsum quos! Quo exercitationem itaque totam recusandae placeat vepnaro? Natus totam ipsa ducimus voluptatibus inventore ab obcaecati harum accusantium animi recusandae aperiam quasi laboriosam pariatur laborum est eum quibusdam ipsam impedit quod, dolorem rem alias cumque placeat deserunt? Placeat ad dolor nobis in repellendus esse accusantium quos corrupti, architecto, impedit odit,  </p>
+                        <p > {data.shortdescription}</p>
                     </div>
                 </div>
                 {/* Full Description */}
                 <div className='p-2 md:p-0 mt-2'>
-                    <p className='text-lg'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates rem ipsa exercitationem nesciunt, voluptas impedit. Nemo id culpa dolorum officia quaerat cum cupiditate illum temporibus suscipit totam voluptate a eaque consequuntur fuga incidunt veniam, provident libero dolores similique rerum corporis at tempore magni perspiciatis. Nobis debitis qui atque architecto. Harum, debitis reprehenderit. Id nulla harum libero molestiae, eos illum ducimus molestias suscipit ipsa possimus earum eum ullam accusamus a quis recusandae quo vitae, numquam assumenda veritatis maxime reiciendis. Voluptatum dolorum repudiandae velit commodi enim vitae iste libero, ea quas tempore, molestiae dignissimos voluptate sint! Quasi culpa consectetur quidem maiores temporibus, consequatur deleniti deserunt, sapiente quos asperiores, impedit est. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe doloremque totam nesciunt earum consequuntur quam ducimus sint, iusto quo cumque dolores delectus fugiat exercitationem dolor repudiandae quasi illum impedit minima placeat nemo molestias fuga aliquid! Facere aliquam necessitatibus quaerat corrupti inventore exercitationem eaque deserunt aliquid natus vitae provident tenetur itaque culpa ex, sunt id reprehenderit molestias odio temporibus totam beatae. Iure dolores rerum, nemo aspernatur sequi commodi voluptatum fugit voluptas eos similique totam! Suscipit officia distinctio, laboriosam molestiae dolores accusantium doloribus amet nesciunt at sint nobis ex veritatis minus? Dolor eaque eius, facilis deleniti rem officia sed veritatis accusantium numquam repudiandae id quos, voluptas sint, molestiae itaque? </p>
+                    <p className='text-lg'> {data.longdescription} </p>
                 </div>
                 {/* reviews */}
                 <div className='mt-6'>
                     <div>
                         <h3 className='text-2xl font-bold text-gray-500 my-3'>Reviews</h3>
-                        {user?.email ? <AddReviewForm setRefresh={setRefresh} /> : <Link className='flex items-center gap-4  text-blue-500 text-lg  my-4 underline' to={'/login'}><img className='w-6 h-6' src='https://pngimg.com/uploads/plus/plus_PNG95.png' /> Please login to add a review</Link>}
+                        {user?.email ? <AddReviewForm setRefresh={setRefresh} /> : <Link className='flex items-center gap-4  text-blue-500 text-lg  my-4 underline' to={'/login'}><img className='w-6 h-6' src='https://pngimg.com/uploads/plus/plus_PNG95.png' alt='' /> Please login to add a review</Link>}
                     </div>
 
                     {

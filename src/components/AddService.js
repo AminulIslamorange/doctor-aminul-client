@@ -14,7 +14,7 @@ const AddService = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://dr-aminul-backend.vercel.app/addservice', {
             method: 'POST',
             body: JSON.stringify({ title, shortdescription, longdescription, price, rating, bannerimage, mainimage }),
             headers: {
